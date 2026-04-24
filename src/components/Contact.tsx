@@ -42,7 +42,7 @@ export function Contact() {
   };
 
   return (
-    <section id="contact" className="relative py-28">
+    <section id="contact" className="relative py-28 overflow-hidden">
       <div className="absolute top-0 left-1/2 -translate-x-1/2 h-72 w-[600px] rounded-full bg-glow-purple/20 blur-[120px]" />
 
       <div className="relative mx-auto max-w-7xl px-6">
@@ -56,7 +56,7 @@ export function Contact() {
           <span className="inline-block rounded-full glass px-4 py-1.5 text-xs text-muted-foreground">
             Contact
           </span>
-          <h2 className="mt-4 text-4xl sm:text-5xl font-bold">
+          <h2 className="mt-4 font-bold">
             Let's Work <span className="text-gradient">Together</span>
           </h2>
           <p className="mt-4 text-muted-foreground">
@@ -70,7 +70,7 @@ export function Contact() {
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
-            className="lg:col-span-2 glass rounded-3xl p-8 flex flex-col gap-6"
+            className="lg:col-span-2 glass rounded-3xl p-6 sm:p-8 flex flex-col gap-6"
           >
             <h3 className="text-2xl font-semibold">Get in touch</h3>
             <p className="text-sm text-muted-foreground">
@@ -80,7 +80,7 @@ export function Contact() {
               {infoItems.map(({ Icon, label, value, href }) => (
                 <div key={label} className="flex items-start gap-4">
                   <div className="grid place-items-center h-11 w-11 rounded-2xl bg-gradient-brand shrink-0">
-                    <Icon size={18} className="text-white" />
+                    <Icon size={18} className="text-primary-foreground" />
                   </div>
                   <div>
                     <p className="text-xs uppercase tracking-wider text-muted-foreground">{label}</p>
@@ -106,7 +106,7 @@ export function Contact() {
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
-            className="lg:col-span-3 glass rounded-3xl p-8 space-y-5"
+            className="lg:col-span-3 glass rounded-3xl p-6 sm:p-8 space-y-5"
             noValidate
           >
             <div className="grid sm:grid-cols-2 gap-5">
@@ -118,7 +118,7 @@ export function Contact() {
 
             <button
               type="submit"
-              className="group inline-flex items-center justify-center gap-2 rounded-full bg-gradient-brand px-7 py-3 text-sm font-semibold text-white shadow-lg transition-transform duration-300 hover:scale-[1.02] w-full sm:w-auto"
+              className="group inline-flex items-center justify-center gap-2 rounded-full bg-gradient-brand px-7 py-3 text-sm font-semibold text-primary-foreground shadow-lg transition-transform duration-300 hover:scale-[1.02] w-full sm:w-auto"
             >
               {sent ? (
                 <>
@@ -152,7 +152,7 @@ function Field({
   as?: "textarea";
 }) {
   const base =
-    "peer w-full rounded-2xl bg-white/[0.03] border border-white/10 px-4 py-3 text-sm text-foreground placeholder-transparent outline-none transition-all duration-300 focus:border-transparent focus:ring-2 focus:ring-purple-500/60 focus:bg-white/[0.05] focus:shadow-[0_0_30px_-5px_oklch(0.65_0.25_300_/_0.4)]";
+    "peer w-full rounded-2xl bg-white/[0.03] border border-white/10 px-4 py-3 text-sm text-foreground placeholder-transparent outline-none transition-all duration-300 focus:border-transparent focus:ring-2 focus:ring-primary focus:bg-white/[0.05] focus:shadow-[0_0_30px_-5px_var(--primary)]";
   return (
     <div className="relative">
       {as === "textarea" ? (

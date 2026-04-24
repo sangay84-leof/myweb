@@ -35,6 +35,8 @@
   --color-glow-pink: var(--glow-pink);
   --color-glow-red: var(--glow-red);
 
+  --breakpoint-xs: 480px;
+
   --font-display: "Space Grotesk", system-ui, sans-serif;
   --font-sans: "Inter", system-ui, sans-serif;
 
@@ -59,64 +61,65 @@
 
 :root {
   --radius: 1rem;
-  /* Dark by default — premium portfolio */
-  --background: oklch(0.13 0.03 270);
-  --foreground: oklch(0.98 0.01 270);
-  --card: oklch(0.18 0.03 270);
-  --card-foreground: oklch(0.98 0.01 270);
-  --popover: oklch(0.18 0.03 270);
-  --popover-foreground: oklch(0.98 0.01 270);
-  --primary: oklch(0.7 0.22 280);
-  --primary-foreground: oklch(0.98 0.01 270);
-  --secondary: oklch(0.22 0.03 270);
-  --secondary-foreground: oklch(0.98 0.01 270);
-  --muted: oklch(0.22 0.03 270);
-  --muted-foreground: oklch(0.7 0.03 270);
-  --accent: oklch(0.65 0.25 340);
-  --accent-foreground: oklch(0.98 0.01 270);
-  --destructive: oklch(0.65 0.25 25);
-  --destructive-foreground: oklch(0.98 0.01 270);
-  --border: oklch(1 0 0 / 8%);
-  --input: oklch(1 0 0 / 10%);
-  --ring: oklch(0.7 0.22 280);
+  /* Nas Daily Inspired - Vibrant Dark Theme */
+  --background: oklch(0.1 0.01 270);
+  --foreground: oklch(0.98 0.01 95);
+  --card: oklch(0.15 0.02 270);
+  --card-foreground: oklch(0.98 0.01 95);
+  --popover: oklch(0.15 0.02 270);
+  --popover-foreground: oklch(0.98 0.01 95);
+  --primary: oklch(0.85 0.2 95); /* Vibrant Yellow */
+  --primary-foreground: oklch(0.1 0 0);
+  --secondary: oklch(0.2 0.02 270);
+  --secondary-foreground: oklch(0.98 0.01 95);
+  --muted: oklch(0.2 0.02 270);
+  --muted-foreground: oklch(0.7 0.02 270);
+  --accent: oklch(0.8 0.25 70); /* Energetic Orange-Yellow */
+  --accent-foreground: oklch(0.1 0 0);
+  --destructive: oklch(0.6 0.25 25);
+  --destructive-foreground: oklch(0.98 0.01 95);
+  --border: oklch(1 0 0 / 10%);
+  --input: oklch(1 0 0 / 12%);
+  --ring: oklch(0.85 0.2 95);
 
-  --glow-blue: oklch(0.7 0.2 250);
-  --glow-purple: oklch(0.65 0.25 300);
-  --glow-pink: oklch(0.7 0.25 340);
-  --glow-red: oklch(0.65 0.25 20);
+  --glow-blue: oklch(0.8 0.2 95);
+  --glow-purple: oklch(0.8 0.25 70);
+  --glow-pink: oklch(0.85 0.2 95);
+  --glow-red: oklch(0.7 0.25 40);
 
-  --gradient-brand: linear-gradient(135deg, oklch(0.7 0.2 250), oklch(0.65 0.25 300) 40%, oklch(0.7 0.25 340) 70%, oklch(0.65 0.25 20));
-  --gradient-bg: radial-gradient(ellipse at top left, oklch(0.2 0.08 270) 0%, transparent 50%),
-                 radial-gradient(ellipse at bottom right, oklch(0.18 0.1 340) 0%, transparent 50%),
-                 oklch(0.1 0.02 270);
-  --shadow-glow: 0 0 60px -10px oklch(0.65 0.25 300 / 0.5);
-  --shadow-card: 0 20px 60px -20px oklch(0 0 0 / 0.6);
+  --gradient-brand: linear-gradient(135deg, oklch(0.85 0.2 95), oklch(0.8 0.25 70) 60%, oklch(0.85 0.2 95));
+  --gradient-bg: radial-gradient(ellipse at top left, oklch(0.15 0.05 95 / 0.15) 0%, transparent 50%),
+                 radial-gradient(ellipse at bottom right, oklch(0.15 0.05 70 / 0.1) 0%, transparent 50%),
+                 oklch(0.08 0.01 270);
+  --shadow-glow: 0 0 60px -10px oklch(0.85 0.2 95 / 0.3);
+  --shadow-card: 0 20px 60px -20px oklch(0 0 0 / 0.8);
 }
 
 .light {
-  --background: oklch(0.985 0.005 270);
-  --foreground: oklch(0.18 0.03 270);
-  --card: oklch(1 0 0);
-  --card-foreground: oklch(0.18 0.03 270);
+  /* Nas Daily Inspired - High Contrast Light Theme */
+  --background: oklch(1 0 0);
+  --foreground: oklch(0.1 0 0);
+  --card: oklch(0.98 0.01 95);
+  --card-foreground: oklch(0.1 0 0);
   --popover: oklch(1 0 0);
-  --popover-foreground: oklch(0.18 0.03 270);
-  --primary: oklch(0.55 0.22 280);
-  --primary-foreground: oklch(0.99 0.005 270);
-  --secondary: oklch(0.96 0.01 270);
-  --secondary-foreground: oklch(0.2 0.03 270);
-  --muted: oklch(0.95 0.01 270);
-  --muted-foreground: oklch(0.45 0.03 270);
-  --accent: oklch(0.6 0.22 340);
-  --accent-foreground: oklch(0.99 0.005 270);
-  --border: oklch(0.18 0.03 270 / 10%);
-  --input: oklch(0.18 0.03 270 / 8%);
-  --ring: oklch(0.55 0.22 280);
+  --popover-foreground: oklch(0.1 0 0);
+  --primary: oklch(0.8 0.2 95); /* Stronger Yellow for light mode */
+  --primary-foreground: oklch(0.1 0 0);
+  --secondary: oklch(0.95 0.01 95);
+  --secondary-foreground: oklch(0.1 0 0);
+  --muted: oklch(0.95 0.01 95);
+  --muted-foreground: oklch(0.4 0.02 270);
+  --accent: oklch(0.75 0.2 70);
+  --accent-foreground: oklch(1 0 0);
+  --border: oklch(0 0 0 / 8%);
+  --input: oklch(0 0 0 / 6%);
+  --ring: oklch(0.8 0.2 95);
 
-  --gradient-bg: radial-gradient(ellipse at top left, oklch(0.92 0.05 270) 0%, transparent 55%),
-                 radial-gradient(ellipse at bottom right, oklch(0.93 0.06 340) 0%, transparent 55%),
-                 oklch(0.985 0.005 270);
-  --shadow-glow: 0 0 60px -10px oklch(0.55 0.22 280 / 0.35);
-  --shadow-card: 0 20px 60px -20px oklch(0.4 0.1 270 / 0.2);
+  --gradient-bg: radial-gradient(ellipse at top left, oklch(0.95 0.05 95 / 0.4) 0%, transparent 60%),
+                 radial-gradient(ellipse at bottom right, oklch(0.95 0.05 70 / 0.3) 0%, transparent 60%),
+                 oklch(1 0 0);
+  --shadow-glow: 0 0 60px -10px oklch(0.8 0.2 95 / 0.2);
+  --shadow-card: 0 20px 60px -20px oklch(0 0 0 / 0.15);
 }
 
 .light .grid-bg {
@@ -157,7 +160,11 @@
   h1, h2, h3, h4 {
     font-family: var(--font-display);
     letter-spacing: -0.02em;
+    text-wrap: balance;
   }
+  
+  h1 { font-size: clamp(2.5rem, 8vw, 5rem); }
+  h2 { font-size: clamp(2rem, 6vw, 3.5rem); }
 }
 
 @layer utilities {

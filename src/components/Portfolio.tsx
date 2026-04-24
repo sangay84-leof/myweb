@@ -26,7 +26,7 @@ export function Portfolio() {
   const filtered = active === "All" ? projects : projects.filter((p) => p.category === active);
 
   return (
-    <section id="portfolio" className="relative py-28">
+    <section id="portfolio" className="relative py-28 overflow-hidden">
       <div className="absolute top-0 left-1/4 h-72 w-72 rounded-full bg-glow-purple/20 blur-[120px]" />
 
       <div className="relative mx-auto max-w-7xl px-6">
@@ -40,7 +40,7 @@ export function Portfolio() {
           <span className="inline-block rounded-full glass px-4 py-1.5 text-xs text-muted-foreground">
             Portfolio
           </span>
-          <h2 className="mt-4 text-4xl sm:text-5xl font-bold">
+          <h2 className="mt-4 font-bold">
             Selected <span className="text-gradient">Work</span>
           </h2>
           <p className="mt-4 text-muted-foreground">
@@ -48,14 +48,14 @@ export function Portfolio() {
           </p>
         </motion.div>
 
-        <div className="mt-10 flex flex-wrap justify-center gap-2">
+        <div className="mt-10 flex flex-wrap justify-center gap-2.5 sm:gap-3">
           {cats.map((c) => (
             <button
               key={c}
               onClick={() => setActive(c)}
-              className={`rounded-full px-5 py-2 text-sm font-medium transition-all duration-300 ${
+              className={`rounded-full px-5 sm:px-6 py-2 sm:py-2.5 text-sm font-medium transition-all duration-300 ${
                 active === c
-                  ? "bg-gradient-brand text-white shadow-lg"
+                  ? "bg-gradient-brand text-primary-foreground shadow-lg"
                   : "glass text-muted-foreground hover:text-foreground"
               }`}
             >
@@ -101,7 +101,7 @@ export function Portfolio() {
                     <p className="mt-1 text-xs text-muted-foreground">{p.tag}</p>
                   </div>
                   <div className="grid place-items-center h-10 w-10 rounded-full bg-gradient-brand opacity-0 -translate-x-2 group-hover:opacity-100 group-hover:translate-x-0 transition-all duration-500">
-                    <ArrowUpRight size={16} className="text-white" />
+                    <ArrowUpRight size={16} className="text-primary-foreground" />
                   </div>
                 </div>
               </motion.a>

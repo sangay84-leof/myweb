@@ -10,12 +10,12 @@ const stats = [
 
 const stack = [
   "React", "Next.js", "TypeScript", "Node.js", "Python",
-  "TensorFlow", "OpenAI", "PostgreSQL", "Tailwind", "AWS",
+  "TensorFlow", "OpenAI", "MySQL", "Tailwind", "Shadcn/UI"
 ];
 
 export function About() {
   return (
-    <section id="about" className="relative py-28">
+    <section id="about" className="relative py-28 overflow-hidden">
       <div className="absolute top-1/3 -left-32 h-80 w-80 rounded-full bg-glow-blue/20 blur-[120px]" />
 
       <div className="relative mx-auto max-w-7xl px-6">
@@ -29,7 +29,7 @@ export function About() {
             <span className="inline-block rounded-full glass px-4 py-1.5 text-xs text-muted-foreground">
               About Me
             </span>
-            <h2 className="mt-4 text-4xl sm:text-5xl font-bold leading-tight">
+            <h2 className="mt-4 font-bold leading-tight">
               Building products at the
               <span className="text-gradient"> intersection of design & AI</span>
             </h2>
@@ -44,11 +44,11 @@ export function About() {
               details that turn a good product into a great one.
             </p>
 
-            <div className="mt-8 flex flex-wrap gap-2">
+            <div className="mt-8 flex flex-wrap gap-2 sm:gap-3">
               {stack.map((s) => (
                 <span
                   key={s}
-                  className="rounded-full border border-white/10 bg-white/[0.03] px-3 py-1.5 text-xs text-muted-foreground hover:text-foreground hover:border-white/30 transition"
+                  className="rounded-full border border-white/10 bg-white/[0.03] px-3 sm:px-4 py-1.5 sm:py-2 text-[10px] sm:text-xs text-muted-foreground hover:text-foreground hover:border-white/30 transition"
                 >
                   {s}
                 </span>
@@ -61,16 +61,17 @@ export function About() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.2 }}
-            className="grid grid-cols-2 gap-5"
+            className="grid grid-cols-1 xs:grid-cols-2 gap-4 sm:gap-6"
           >
             {stats.map((s, i) => (
               <div
                 key={s.label}
-                className="group glass rounded-3xl p-6 hover:-translate-y-1 transition duration-500"
-                style={{ transform: i % 2 ? "translateY(20px)" : undefined }}
+                className="group glass rounded-3xl p-6 xs:p-7 sm:p-8 hover:-translate-y-1 transition duration-500"
+                style={{ transform: i % 2 === 1 ? "translateY(var(--stagger, 0px))" : undefined }}
               >
+                <style dangerouslySetInnerHTML={{ __html: `@media (min-width: 640px) { :root { --stagger: 24px; } }` }} />
                 <div className="grid place-items-center h-12 w-12 rounded-2xl bg-gradient-brand shadow-lg">
-                  <s.Icon size={20} className="text-white" />
+                  <s.Icon size={20} className="text-primary-foreground" />
                 </div>
                 <p className="mt-5 text-3xl font-bold text-gradient">{s.value}</p>
                 <p className="mt-1 text-sm text-muted-foreground">{s.label}</p>

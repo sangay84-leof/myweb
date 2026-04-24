@@ -42,7 +42,7 @@ const services = [
 
 export function Services() {
   return (
-    <section id="services" className="relative py-28">
+    <section id="services" className="relative py-28 overflow-hidden">
       <div className="absolute top-1/2 right-0 h-80 w-80 rounded-full bg-glow-pink/20 blur-[120px]" />
 
       <div className="relative mx-auto max-w-7xl px-6">
@@ -56,7 +56,7 @@ export function Services() {
           <span className="inline-block rounded-full glass px-4 py-1.5 text-xs text-muted-foreground">
             Services
           </span>
-          <h2 className="mt-4 text-4xl sm:text-5xl font-bold">
+          <h2 className="mt-4 font-bold">
             What I <span className="text-gradient">Do Best</span>
           </h2>
           <p className="mt-4 text-muted-foreground">
@@ -74,14 +74,14 @@ export function Services() {
               transition={{ duration: 0.5, delay: i * 0.08 }}
               className="group relative"
             >
-              <div className="relative h-full glass rounded-3xl p-7 transition-all duration-500 hover:-translate-y-2 hover:border-white/20 overflow-hidden">
+              <div className="relative h-full glass rounded-3xl p-6 sm:p-8 transition-all duration-500 hover:-translate-y-2 hover:border-white/20 overflow-hidden">
                 <div
                   className="absolute -top-20 -right-20 h-40 w-40 rounded-full opacity-0 group-hover:opacity-60 transition duration-700 pointer-events-none"
                   style={{ background: "var(--gradient-brand)", filter: "blur(60px)" }}
                 />
                 <div className="relative">
                   <div className="grid place-items-center h-14 w-14 rounded-2xl bg-gradient-brand shadow-lg">
-                    <s.Icon size={22} className="text-white" />
+                    <s.Icon size={22} className="text-primary-foreground" />
                   </div>
                   <h3 className="mt-6 text-xl font-semibold">{s.title}</h3>
                   <p className="mt-2 text-sm text-muted-foreground leading-relaxed">{s.desc}</p>

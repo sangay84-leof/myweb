@@ -30,7 +30,7 @@ const steps = [
 
 export function Process() {
   return (
-    <section id="process" className="relative py-28">
+    <section id="process" className="relative py-28 overflow-hidden">
       <div className="mx-auto max-w-7xl px-6">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -42,7 +42,7 @@ export function Process() {
           <span className="inline-block rounded-full glass px-4 py-1.5 text-xs text-muted-foreground">
             Process
           </span>
-          <h2 className="mt-4 text-4xl sm:text-5xl font-bold">
+          <h2 className="mt-4 font-bold">
             How I Work With <span className="text-gradient">Clients</span>
           </h2>
           <p className="mt-4 text-muted-foreground">
@@ -63,19 +63,19 @@ export function Process() {
               transition={{ duration: 0.5, delay: i * 0.1 }}
               className="group relative"
             >
-              <div className="relative glass rounded-3xl p-6 h-full transition-all duration-500 hover:-translate-y-2 hover:border-white/20">
+              <div className="relative glass rounded-3xl p-6 sm:p-8 h-full transition-all duration-500 hover:-translate-y-2 hover:border-white/20">
                 <div
                   className="absolute -inset-px rounded-3xl opacity-0 group-hover:opacity-100 transition duration-500 pointer-events-none"
                   style={{
                     background:
-                      "linear-gradient(135deg, oklch(0.7 0.2 250 / 0.4), oklch(0.65 0.25 300 / 0.4), oklch(0.7 0.25 340 / 0.4))",
+                      "linear-gradient(135deg, oklch(0.85 0.2 95 / 0.4), oklch(0.75 0.25 140 / 0.4))",
                     filter: "blur(16px)",
                     zIndex: -1,
                   }}
                 />
                 <div className="flex items-center justify-between">
                   <div className="grid place-items-center h-12 w-12 rounded-2xl bg-gradient-brand shadow-lg">
-                    <s.Icon size={20} className="text-white" />
+                    <s.Icon size={20} className="text-primary-foreground" />
                   </div>
                   <span className="text-3xl font-bold text-white/10 group-hover:text-gradient transition">
                     {s.n}
